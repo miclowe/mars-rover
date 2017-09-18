@@ -13,13 +13,13 @@ class Rover {
 
   void move(String command, Plateau grid) {
     switch (command) {
-      case "M":
+      case Move.FORWARD.id:
         moveForward(grid)
         break
-      case "L":
+      case Move.LEFT.id:
         turnLeft()
         break
-      case "R":
+      case Move.RIGHT.id:
         turnRight()
         break
       default:
@@ -48,25 +48,25 @@ class Rover {
     int newXPos = x
     int newYPos = y
     switch (direction) {
-      case "N":
+      case Direction.N:
         newYPos = this.y + 1
         if (grid.isMoveValid(x, newYPos)) {
           y = newYPos
         }
         break
-      case "E":
+      case Direction.E:
         newXPos = this.x + 1
         if (grid.isMoveValid(newXPos, y)) {
           x = newXPos
         }
         break
-      case "S":
+      case Direction.S:
         newYPos = this.y - 1
         if (grid.isMoveValid(x, newYPos)) {
           y = newYPos
         }
         break
-      case "W":
+      case Direction.W:
         newXPos = this.x - 1
         if (grid.isMoveValid(newXPos, y)) {
           x = newXPos

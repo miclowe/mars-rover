@@ -3,7 +3,7 @@ package main.groovy.marsrover
 class MainRover {
 
   final static List<String> VALID_DIRECTIONS = Direction.values().collect { it.toString() }
-  final static List<String> VALID_MOVES = ['L', 'M', 'R']
+  final static List<String> VALID_MOVES = Move.values().id.collect { it.toString() }
 
   static void main(String... args) {
     Map input = getInput()
